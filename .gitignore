@@ -2,5 +2,5 @@
 .env.local
 .env.development.local
 
-
+/public/node_modules
 /node_modules
