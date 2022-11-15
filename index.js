@@ -16,4 +16,4 @@ mongoose.connect(DB, {
 
 
 const PORT = process.env.PORT || 5000
-app.listen(PORT, () => console.log(`${process.env.APP_NAME} API listening on port ${PORT} in ${process.env.NODE_ENV} mode`))
+app.listen(PORT, () => console.log(`Server listening on port ${PORT} in ${process.env.NODE_ENV} mode`))

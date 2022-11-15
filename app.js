@@ -1,5 +1,5 @@
 const express = require('express')
-const { Server } = require('socket')
+const { Server } = require('socket.io')
 const cors = require('cors')
 const bodyParser = require('body-parser')
 

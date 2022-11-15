@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+const crypto = require('crypto')
 
 const UserSchema = mongoose.Schema({
 
@@ -11,7 +11,6 @@ const UserSchema = mongoose.Schema({
 
     password: {
         type: String,
-        required: [true, "password is required"],
     },
 
     email: String,
@@ -22,6 +21,7 @@ const UserSchema = mongoose.Schema({
 {
     timestamps: true
 })
+
 
 
 module.exports = mongoose.model('User', UserSchema)
