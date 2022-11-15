@@ -1,0 +1,33 @@
+.error-page {
+    padding: 30px 6px;
+    font-family: FSJoey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-page .gif {
+    height: 350px;
+    width: 300px;
+}
+.error-page .oops{
+    margin-top: 30px;
+    color: var(--siteOrange);
+    font-weight: 700;
+    font-size: 18px;
+}
+.error-page .message{
+    font-size: 17px;
+    font-weight: 600;
+    text-align: center;
+}
+@media only screen and (max-width:600px) {
+    .error-page .gif {
+        height: 240px;
+        width: 240px;
+    }
+    .error-page .message{
+        font-size: 15px;
+    }
+}

@@ -1,0 +1,235 @@
+.page-main {
+    width: 100%;
+    padding: 30px 6px;
+    font-family: FSJoey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.instruction {
+    background-color: var(--siteNotification);
+    color: #950a0a;
+    width: 100%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 15px 0;
+    gap: 1rem;
+    font-weight: 600;
+    font-size: 17px;
+    text-align: center;
+}
+
+.instruction:hover {
+    opacity: 0.8;
+}
+
+/* =============================== REGISTER PAGE =============================== */
+.auth-box {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.auth-box .auth-form {
+    margin: 0px 0px 30px 0;
+    width: 100%;
+}
+
+.auth-form .password-strength-bagde {
+    padding: .5rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0px 20px 0;
+    font-weight: 700;
+    font-size: 17px;
+}
+.password-strength-info{
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0px 0px 15px 0px;
+}
+.auth-form .after {
+    margin: 20px 0;
+    display: flex;
+    gap: .4rem;
+    width: 100%;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-weight: 600
+}
+
+.auth-form .after .link {
+    font-weight: 700;
+    color: var(--siteOrange);
+    cursor: pointer;
+}
+.voting-commences{
+    text-align: center;
+    font-weight: bold;
+    color: var(--siteOrange);
+    font-size: 25px;
+    margin-top: 20px;
+}
+@media only screen and (max-width:1024px) {
+    .instruction {
+        font-size: 14px;
+        padding: 0.3rem 0.5rem;
+    }
+
+    .instruction .icon {
+        font-size: 30px;
+    }
+
+    .auth-box {
+        width: 97%;
+    }
+
+    .auth-form .after {
+        font-size: 14px;
+    }
+    .voting-commences{
+        font-size: 19px;
+    }
+}
+/* ======================= ADMIN PANELS ===================== */
+.main {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.left{
+    position: sticky;
+    top: 0;
+    left: 0;
+    
+    flex-direction: column;
+    width: 25vw;
+    padding: 0 20px;
+}
+.left .content{
+    width: 100%;
+    border: 2px solid #eee;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    box-shadow: 0 0 10px var(--siteGreen);
+}
+.left .content a{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    gap: .4rem;
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+    font-size: 18px;
+}
+.left .content a:hover{
+    background: #ddd;
+    color: var(--siteGreen)
+}
+.right{
+    width: 75vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: scroll;
+}
+.admin-child{
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    border-left: 1px solid #eee;
+    position: relative;
+}
+.admin-child .title{
+    background-color: #eeee;
+    color: #000;
+    width: 100%;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 15px 0;
+    gap: 1rem;
+    font-weight: 600;
+    font-size: 19px;
+    text-align: center;
+}
+.admin-child .add{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--siteGreen);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    position: absolute;
+    bottom: 0px;
+    right: 20px;
+    box-shadow:0 0 10px var(--siteGreen);
+}
+.admin-child .add:hover{
+    background: var(--siteGreen) !important;
+    color: #fff !important;
+    box-shadow:0 0 10px var(--siteOrange);
+}
+.table-actions{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .6rem;
+    width: 100%;
+}
+.table-actions button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:all .3s cubic-bezier(.02,.01,.47,1);
+    background-color: #fff;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    height: 35px;
+    border-radius:3px !important;
+    color: var(--siteGreen) !important;
+}
+
+.table-actions button:hover{
+    box-shadow:0 0 10px var(--siteGreen);
+    animation:rotate .7s ease-in-out both;
+}
+@media only screen and (max-width:1024px) {
+    .left{
+        display: none;
+    }
+    .right{
+        width: 100vw;
+    }
+}

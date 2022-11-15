@@ -1,0 +1,89 @@
+@font-face {
+	font-family: 'FSJoey';
+	src: url('./styles/fonts/FSJoey-Regular.otf');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'FSJoey';
+	src: url('./styles/fonts/FSJoey-Medium.otf');
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: 'FSJoey';
+	src: url('./styles/fonts/FSJoey-Bold.otf');
+	font-weight: bold;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+body {
+	font-family: FSJoey;
+	min-height: 100vh;
+	width: 100%;
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+:root {
+	--themeColor: #843bd1;
+	--siteGreen: green;
+	--siteOrange: #ff7400;
+    --siteNotification: #ff94004f;
+
+}
+
+
+.btn-animated{
+    transition:all .3s cubic-bezier(.02,.01,.47,1);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+    font-weight: 700 !important;
+    font-size: 18px !important;
+    height: 45px;
+    border-radius: 30px !important;
+    color: var(--siteGreen) !important;
+}
+.btn-animated:hover{
+    box-shadow:0 0 10px var(--siteGreen);
+    animation:rotate .7s ease-in-out both;
+    color: var(--siteOrange) !important;
+}
+@keyframes rotate{
+    0%{
+        transform:rotate(0deg)
+    }
+    25%{
+        transform:rotate(3deg)
+    }
+    50%{
+        transform:rotate(-3deg)
+    }
+    75%{
+        transform:rotate(1deg)
+    }
+    100%{
+        transform:rotate(0deg)
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    .btn-animated{
+        height: 40px
+    }
+}
+
+/* -------- IMPORTS ---------- */
+@import url("./styles/components.css");
+@import url("./styles/pages.css");
+@import url("./styles/error404.css");
