@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const crypto = require('crypto')
+
 
 const UserSchema = mongoose.Schema({
 
@@ -11,6 +11,11 @@ const UserSchema = mongoose.Schema({
 
     password: {
         type: String,
+    },
+
+    role: {
+        type: String,
+        enum: ['user', 'admin', 'superadmin']
     },
 
     email: String,

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 
-const RolesSchema = mongoose.Schema({
+const PositionSchema = mongoose.Schema({
     
     name: {
         type: String,
@@ -9,8 +9,8 @@ const RolesSchema = mongoose.Schema({
     },
 
     levels: {
-        type: [String | Number],
-        default: [100, 200, 300, 400, 500]
+        type: [Number],
+        enum: [100, 200, 300, 400, 500]
     }
 
 },
@@ -19,4 +19,4 @@ const RolesSchema = mongoose.Schema({
 })
 
 
-module.exports = mongoose.model('Roles', RolesSchema)
+module.exports = mongoose.model('Posiitons', PositionSchema)
