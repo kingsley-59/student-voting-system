@@ -64,6 +64,10 @@ const Vote = () => {
         //isReady();
     }, [])
 
+    const handleSelect = (e) => {
+        
+    }
+
     return (
         <div className='page-main'>
             {loading.pageLoading && <PageLoading />}
@@ -81,9 +85,9 @@ const Vote = () => {
                                         </div>
                                         {data.contestants.map((contestant, i) => (
                                             <div key={i} className='contestant-data'>
-                                                <input type='checkbox'  name='vote-for' />
-                                                <img className='avatar' src={contestant.avatar} alt='avatar' />
-                                                <div className="name">{contestant.name}</div>
+                                                <input defaultChecked={true} onChange={handleSelect} type='checkbox' id={contestant.name} />
+                                                <label htmlFor={contestant.name}><img className='avatar' src={contestant.avatar} alt='avatar' /></label>
+                                                <label htmlFor={contestant.name} className="name">{contestant.name}</label>
                                             </div>
                                         ))}
                                     </React.Fragment>
