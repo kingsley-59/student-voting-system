@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 
-const Authentication = (req, res, next) => {
+const authenticate = (req, res, next) => {
 	const authHeader = req.headers?.authorization;
 
 	let result;
@@ -17,7 +17,7 @@ const Authentication = (req, res, next) => {
 			result = jwt.verify(token, process.env.JWT_KEY, options);
 
 			// pass back the decoded token to the request object
-			req.user = result;
+			req.decoded = result;
 
 			// pass execution to the next middleware
 			next();
@@ -39,4 +39,4 @@ const Authentication = (req, res, next) => {
 
 
 
-module.exports = Authentication
+module.exports = authenticate

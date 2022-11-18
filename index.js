@@ -12,6 +12,7 @@ mongoose.connect(DB, {
 }).catch(error => {
     console.log('Somthing went wrong. Database not connected!')
     console.log(error?.message ?? error)
+    process.exit(0)
 })
 
 

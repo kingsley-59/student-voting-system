@@ -39,8 +39,8 @@ export const isVotingTime = () => async (dispatch) => {
 }
 export const loginUser = ({ regNo, password }) => async (dispatch) => {
     try {
-        dispatch({ type: TYPES.LOADING, payload: { loggingIn: true } });
-        const res = { status: 200, data: { access_token: 'gttretertereryeryeryeryeryeryr', user: { role: 'user' }, msg: 'Login Success!' } }
+        dispatch({ type: TYPES.LOADING, payload: { loggingIn: true } })
+        const res = { status: 200, data: { access_token: 'gttreterter eryeryeryeryeryeryr', user: { role: 'user' }, msg: 'Login Success!' } }
 
         localStorage.setItem("userLoggedIn", true)
         dispatch({

@@ -8,9 +8,9 @@ const ContestantSchema = mongoose.Schema({
         ref: 'User'
     },
 
-    role: {
+    position: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Roles'
+        ref: 'Posiitons'
     },
 
     votes: {
