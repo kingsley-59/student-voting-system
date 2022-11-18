@@ -233,3 +233,56 @@
         width: 100vw;
     }
 }
+
+
+
+.vote-card {
+    width: 500px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%);
+    padding: 1rem .7rem;
+}
+
+.vote-card .role-title{
+    font-weight: 700;
+    display: flex;
+    gap: .6rem;
+    background-color: hsl(27, 100%, 70%);
+    color: #fff;
+    opacity: 1;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding: .5rem;
+    font-size: 18px;
+    margin: 1rem 0;
+}
+
+.vote-card .contestant-data{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: .7rem .2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    gap: .7rem;
+}
+.vote-card .contestant-data:hover{
+    background-color: #eee;
+}
+.vote-card .contestant-data .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 0 5px 0 rgb(0 0 0 / 20%);
+}
+.vote-card .contestant-data .name{
+    font-weight: 600;
+}
+
+@media only screen and (max-width:500px) {
+    .vote-card{
+        width: 100%;
+    }
+}

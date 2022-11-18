@@ -17,9 +17,9 @@ export const confirmRegNo = ({ regNo }) => async (dispatch) => {
 
 export const setPassword = ({ regNo, password, cpassword }) => async (dispatch) => {
     try {
-        dispatch({ type: TYPES.LOADING, payload: { loadingSetPassword: true } })
-        const res = postDataAPI('set-password', { regNo, password })
-        dispatch({ type: TYPES.LOADING, payload: {} })
+        dispatch({ type: TYPES.LOADING, payload: { loadingSetPassword: true } });
+        const res = postDataAPI('set-password', { regNo, password });
+        dispatch({ type: TYPES.LOADING, payload: {} });
         return res;
 
     } catch (err) {
@@ -29,19 +29,18 @@ export const setPassword = ({ regNo, password, cpassword }) => async (dispatch) 
 
 export const isVotingTime = () => async (dispatch) => {
     try {
-        dispatch({ type: TYPES.LOADING, payload: { pageLoading: true } })
-        const res = { status: 500, data: { isVotingTime: true } }
-        dispatch({ type: TYPES.LOADING, payload: {} })
+        dispatch({ type: TYPES.LOADING, payload: { pageLoading: true } });
+        const res = { status: 500, data: { isVotingTime: false, votingDate: 'Nov 15, 2022 13:28:00', voteData: [] } };
+        dispatch({ type: TYPES.LOADING, payload: {} });
         return res;
-
     } catch (err) {
-        handleAPIRequestErrors({ err, dispatch })
+        handleAPIRequestErrors({ err, dispatch });
     }
 }
 export const loginUser = ({ regNo, password }) => async (dispatch) => {
     try {
-        dispatch({ type: TYPES.LOADING, payload: { loggingIn: true } })
-        const res = { status: 200, data: { access_token: 'gttreterter eryeryeryeryeryeryr', user: { role: 'user' }, msg: 'Login Success!' } }
+        dispatch({ type: TYPES.LOADING, payload: { loggingIn: true } });
+        const res = { status: 200, data: { access_token: 'gttretertereryeryeryeryeryeryr', user: { role: 'user' }, msg: 'Login Success!' } }
 
         localStorage.setItem("userLoggedIn", true)
         dispatch({

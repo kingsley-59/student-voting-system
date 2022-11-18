@@ -5,23 +5,53 @@ import Logo from '../../components/Logo';
 import PageLoading from '../../components/PageLoading';
 import TimeCounter from '../../components/TimeCounter';
 import { isVotingTime, refreshToken } from '../../redux/actions/auth';
-import { TYPES } from '../../redux/actions/types';
+import img from '../../assets/images/logo.jpg'
 
 const Vote = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { auth, loading } = useSelector(state => state)
-    const [page, setPage] = useState('')
+    const [page, setPage] = useState('vote')
+    const [futureDate, setFutureDate] = useState('')
+    const [voteData, setVoteData] = useState([
+        {
+            role: 'President',
+            contestants: [
+                { _id: '', name: 'Ajibo Chidera Promise', avatar: img },
+                { _id: '', name: 'Akahibe Kingsley', avatar: img },
+                { _id: '', name: 'Amadi Joshua', avatar: img }
+            ]
+        },
+        {
+            role: 'Vice-President',
+            contestants: [
+                { _id: '', name: 'Ajibo Chidera Promise', avatar: img },
+                { _id: '', name: 'Akahibe Kingsley', avatar: img },
+                { _id: '', name: 'Amadi Joshua', avatar: img }
+            ]
+        },
+        {
+            role: 'Financial Secretary',
+            contestants: [
+                { _id: '', name: 'Ajibo Chidera Promise', avatar: img },
+                { _id: '', name: 'Akahibe Kingsley', avatar: img },
+                { _id: '', name: 'Amadi Joshua', avatar: img }
+            ]
+        }
+    ])
 
     //Check if it's set time to cast votes
     const isReady = async () => {
         const res = await dispatch(isVotingTime({}))
         if (res.status !== 200 || !res.data.isVotingTime) {
+            setFutureDate(res.data.votingDate)
             setPage('getready')
-        } else {
+        } else if (res.status === 200 && res.data.isVotingTime) {
+            console.log(res.data.voteData)
             setPage('vote')
         }
     }
+
     //Redirect if not logged In!
     const redirectAway = async () => {
         const res = await dispatch(refreshToken({ message: 'Please Login to your Account to Vote!' }))
@@ -30,8 +60,8 @@ const Vote = () => {
         }
     }
     useEffect(() => {
-        //redirectAway()
-        isReady();
+        //redirectAway();
+        //isReady();
     }, [])
 
     return (
@@ -42,7 +72,23 @@ const Vote = () => {
                 <React.Fragment>
                     {page === 'vote' &&
                         <React.Fragment>
-
+                            <div className="vote-card">
+                                {voteData.map((data, i) => (
+                                    <React.Fragment>
+                                        <div className='role-title' key={i}>
+                                            <div className="star">*</div>
+                                            {data.role}
+                                        </div>
+                                        {data.contestants.map((contestant, i) => (
+                                            <div key={i} className='contestant-data'>
+                                                <input type='checkbox'  name='vote-for' />
+                                                <img className='avatar' src={contestant.avatar} alt='avatar' />
+                                                <div className="name">{contestant.name}</div>
+                                            </div>
+                                        ))}
+                                    </React.Fragment>
+                                ))}
+                            </div>
                         </React.Fragment>
                     }
                     {page === 'getready' &&
@@ -52,13 +98,12 @@ const Vote = () => {
                                 <div className="voting-commences">
                                     Voting Commences In
                                 </div>
-                                <TimeCounter />
+                                <TimeCounter futureDate={futureDate} />
                             </div>
                             <Link style={{ width: '200px' }} to='/home'>
                                 <div className='btn btn-animated'>Back to Home</div>
                             </Link>
                         </React.Fragment>
-
                     }
                 </React.Fragment>
             }

@@ -34,7 +34,7 @@ body {
 :root {
 	--themeColor: #843bd1;
 	--siteGreen: green;
-	--siteOrange: #ff7400;
+	--siteOrange: hsl(27, 100%, 50%);
     --siteNotification: #ff94004f;
 
 }
